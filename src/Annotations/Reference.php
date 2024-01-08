@@ -71,18 +71,18 @@ class Reference extends AbstractAnnotation
         $valid = parent::validate($stack, $skip, $ref, $context);
 
         if (Generator::isDefault($this->ref)) {
-            $this->_context->logger->warning($this->identity() . ' Ref is required');
+            $this->_context->logger->warning($this->identity() . ' $ref property is required');
             $valid = false;
         }
 
         if (!$this->_context->root()->isVersion(OpenApi::VERSION_3_1_0)) {
             if (!Generator::isDefault($this->summary)) {
-                $this->_context->logger->warning($this->identity() . ' Summary property is only supported in OpenAPI 3.1.0');
+                $this->_context->logger->warning($this->identity() . ' $summary property is only supported in OpenAPI 3.1.0');
                 $valid = false;
             }
 
             if (!Generator::isDefault($this->description)) {
-                $this->_context->logger->warning($this->identity() . ' Description property is only supported in OpenAPI 3.1.0');
+                $this->_context->logger->warning($this->identity() . ' $description property is only supported in OpenAPI 3.1.0');
                 $valid = false;
             }
         }
