@@ -59,7 +59,7 @@ class AugmentRefs implements ProcessorInterface
     protected function resolveFQCNRefs(Analysis $analysis): void
     {
         /** @var OA\AbstractAnnotation[] $annotations */
-        $annotations = $analysis->getAnnotationsOfType([OA\Examples::class, OA\Header::class, OA\Link::class, OA\Parameter::class, OA\PathItem::class, OA\RequestBody::class, OA\Response::class, OA\Schema::class, OA\SecurityScheme::class]);
+        $annotations = $analysis->getAnnotationsOfType([OA\Examples::class, OA\Header::class, OA\Link::class, OA\Parameter::class, OA\PathItem::class, OA\RequestBody::class, OA\Response::class, OA\Schema::class, OA\SecurityScheme::class, OA\Reference::class]);
 
         foreach ($annotations as $annotation) {
             if (property_exists($annotation, 'ref') && !Generator::isDefault($annotation->ref) && is_string($annotation->ref) && !$this->isRef($annotation->ref)) {
