@@ -13,6 +13,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/YoYo'
+  /endpoint2:
+    get:
+      operationId: d0c99efb7fd0c341ed73def73bfa96e1
+      responses:
+        '200':
+          description: 'All good'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/YoYo'
 components:
   schemas:
     YoYo: {  }

@@ -27,3 +27,17 @@ class ClassRef
 class ClassRefEndpoint
 {
 }
+
+#[OAT\Get(
+    path: '/endpoint2',
+    responses: [
+        new OAT\Response(
+            response: 200,
+            description: 'All good',
+            content: new OAT\JsonContent(ref: new OAT\Reference(ref: ClassRef::class))
+        ),
+    ]
+)]
+class ClassRefEndpointAttribute
+{
+}
