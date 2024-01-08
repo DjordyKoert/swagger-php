@@ -20,7 +20,7 @@ class SecurityScheme extends AbstractAnnotation
      *
      * @see [Using refs](https://swagger.io/docs/specification/using-ref/)
      *
-     * @var string|class-string|object
+     * @var string|class-string|object|Reference
      */
     public $ref = Generator::UNDEFINED;
 

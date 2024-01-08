@@ -26,7 +26,7 @@ These will be ignored by `swagger-php` but can be used for custom processing.
 
 #### Allowed in
 ---
-<a href="#additionalproperties">AdditionalProperties</a>, <a href="#components">Components</a>, <a href="#contact">Contact</a>, <a href="#delete">Delete</a>, <a href="#discriminator">Discriminator</a>, <a href="#examples">Examples</a>, <a href="#externaldocumentation">ExternalDocumentation</a>, <a href="#flow">Flow</a>, <a href="#get">Get</a>, <a href="#head">Head</a>, <a href="#header">Header</a>, <a href="#info">Info</a>, <a href="#items">Items</a>, <a href="#jsoncontent">JsonContent</a>, <a href="#license">License</a>, <a href="#link">Link</a>, <a href="#mediatype">MediaType</a>, <a href="#openapi">OpenApi</a>, <a href="#operation">Operation</a>, <a href="#options">Options</a>, <a href="#parameter">Parameter</a>, <a href="#patch">Patch</a>, <a href="#pathitem">PathItem</a>, <a href="#pathparameter">PathParameter</a>, <a href="#post">Post</a>, <a href="#property">Property</a>, <a href="#put">Put</a>, <a href="#requestbody">RequestBody</a>, <a href="#response">Response</a>, <a href="#schema">Schema</a>, <a href="#securityscheme">SecurityScheme</a>, <a href="#server">Server</a>, <a href="#servervariable">ServerVariable</a>, <a href="#tag">Tag</a>, <a href="#trace">Trace</a>, <a href="#xml">Xml</a>, <a href="#xmlcontent">XmlContent</a>
+<a href="#additionalproperties">AdditionalProperties</a>, <a href="#components">Components</a>, <a href="#contact">Contact</a>, <a href="#delete">Delete</a>, <a href="#discriminator">Discriminator</a>, <a href="#examples">Examples</a>, <a href="#externaldocumentation">ExternalDocumentation</a>, <a href="#flow">Flow</a>, <a href="#get">Get</a>, <a href="#head">Head</a>, <a href="#header">Header</a>, <a href="#info">Info</a>, <a href="#items">Items</a>, <a href="#jsoncontent">JsonContent</a>, <a href="#license">License</a>, <a href="#link">Link</a>, <a href="#mediatype">MediaType</a>, <a href="#openapi">OpenApi</a>, <a href="#operation">Operation</a>, <a href="#options">Options</a>, <a href="#parameter">Parameter</a>, <a href="#patch">Patch</a>, <a href="#pathitem">PathItem</a>, <a href="#pathparameter">PathParameter</a>, <a href="#post">Post</a>, <a href="#property">Property</a>, <a href="#put">Put</a>, <a href="#requestbody">RequestBody</a>, <a href="#response">Response</a>, <a href="#schema">Schema</a>, <a href="#securityscheme">SecurityScheme</a>, <a href="#server">Server</a>, <a href="#servervariable">ServerVariable</a>, <a href="#tag">Tag</a>, <a href="#trace">Trace</a>, <a href="#webhook">Webhook</a>, <a href="#xml">Xml</a>, <a href="#xmlcontent">XmlContent</a>
 
 ## [Components](https://github.com/zircote/swagger-php/tree/master/src/Annotations/Components.php)
 
@@ -164,7 +164,7 @@ On top of this subset, there are extensions provided by this specification to al
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to an example.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>example</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>The key into `#/components/examples`.</p></dd>
@@ -312,7 +312,7 @@ A map between the scope name and a short description for it.</p></dd>
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to the endpoint.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>header</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>No details available.</p></dd>
@@ -468,7 +468,7 @@ accessing values in an operation and using them as parameters while invoking the
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>No details available.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>link</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>The key into MediaType->links array.</p></dd>
@@ -546,7 +546,7 @@ This is the root document object for the API specification.
 
 #### Nested elements
 ---
-<a href="#info">Info</a>, <a href="#server">Server</a>, <a href="#pathitem">PathItem</a>, <a href="#components">Components</a>, <a href="#tag">Tag</a>, <a href="#externaldocumentation">ExternalDocumentation</a>, <a href="#attachable">Attachable</a>
+<a href="#info">Info</a>, <a href="#server">Server</a>, <a href="#pathitem">PathItem</a>, <a href="#components">Components</a>, <a href="#tag">Tag</a>, <a href="#externaldocumentation">ExternalDocumentation</a>, <a href="#webhook">Webhook</a>, <a href="#attachable">Attachable</a>
 
 #### Properties
 ---
@@ -608,7 +608,7 @@ A unique parameter is defined by a combination of a name and location.
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to the endpoint.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>parameter</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>The key into <code>Components::parameters</code> or <code>PathItem::parameters</code> array.</p></dd>
@@ -738,7 +738,7 @@ The path itself is still exposed to the documentation viewer, but they will not 
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>No details available.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>summary</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>An optional, string summary, intended to apply to all operations in this path.</p></dd>
@@ -849,6 +849,27 @@ A `@OA\Request` query parameter.
   <dd><p>This takes 'query' as the default location.</p></dd>
 </dl>
 
+## [Reference](https://github.com/zircote/swagger-php/tree/master/src/Annotations/Reference.php)
+
+
+
+#### Properties
+---
+<dl>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dd><p>No details available.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
+  <dt><strong>summary</strong> : <span style="font-family: monospace;">string</span></dt>
+  <dd><p>A short summary which overrides that of the referenced component.<br />
+If the referenced object-type does not allow a summary field, then this field has no effect.</p><p><i>See</i>: <a href="https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#reference-object">Added in OpenApi 3.1.0</a></p></dd>
+  <dt><strong>description</strong> : <span style="font-family: monospace;">string</span></dt>
+  <dd><p>A short description which overrides that of the referenced component.<br />
+If the referenced object-type does not allow a description field, then this field has no effect.</p><p><i>See</i>: <a href="https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#reference-object">Added in OpenApi 3.1.0</a></p></dd>
+</dl>
+
+#### Reference
+---
+- [OAI Security Scheme Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#reference-object).
+
 ## [RequestBody](https://github.com/zircote/swagger-php/tree/master/src/Annotations/RequestBody.php)
 
 Describes a single request body.
@@ -864,7 +885,7 @@ Describes a single request body.
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to a request body.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>request</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>Request body model name.</p></dd>
@@ -901,7 +922,7 @@ static links to operations based on the response.
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to a response.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>response</strong> : <span style="font-family: monospace;">string|int</span></dt>
   <dd><p>The key into Operations->responses array.<br />
@@ -937,7 +958,7 @@ On top of this subset, there are extensions provided by this specification to al
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to the endpoint.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>schema</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>The key into Components->schemas array.</p></dd>
@@ -1094,7 +1115,7 @@ defined by this property's value.</p></dd>
 #### Properties
 ---
 <dl>
-  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object</span></dt>
+  <dt><strong>ref</strong> : <span style="font-family: monospace;">string|class-string|object|Reference</span></dt>
   <dd><p>The relative or absolute path to a security scheme.</p><p><i>See</i>: <a href="https://swagger.io/docs/specification/using-ref/">Using refs</a></p></dd>
   <dt><strong>securityScheme</strong> : <span style="font-family: monospace;">string</span></dt>
   <dd><p>The key into OpenApi->security array.</p></dd>
@@ -1230,6 +1251,25 @@ CommonMark syntax MAY be used for rich text representation.</p></dd>
 <dl>
   <dt><strong>method</strong></dt>
   <dd><p>No details available.</p></dd>
+</dl>
+
+## [Webhook](https://github.com/zircote/swagger-php/tree/master/src/Annotations/Webhook.php)
+
+Acts like a `PathItem` with the main difference being that it requires `webhook` instead of `path`.
+
+#### Allowed in
+---
+<a href="#openapi">OpenApi</a>
+
+#### Nested elements
+---
+<a href="#get">Get</a>, <a href="#post">Post</a>, <a href="#put">Put</a>, <a href="#delete">Delete</a>, <a href="#patch">Patch</a>, <a href="#trace">Trace</a>, <a href="#head">Head</a>, <a href="#options">Options</a>, <a href="#parameter">Parameter</a>, <a href="#pathparameter">PathParameter</a>, <a href="#server">Server</a>, <a href="#attachable">Attachable</a>
+
+#### Properties
+---
+<dl>
+  <dt><strong>webhook</strong> : <span style="font-family: monospace;">string</span></dt>
+  <dd><p>Key for the webhooks map.</p></dd>
 </dl>
 
 ## [Xml](https://github.com/zircote/swagger-php/tree/master/src/Annotations/Xml.php)

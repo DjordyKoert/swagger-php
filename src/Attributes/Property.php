@@ -13,7 +13,7 @@ class Property extends \OpenApi\Annotations\Property
 {
     /**
      * @param string|non-empty-array<string>|null                    $type
-     * @param string|class-string|object|null                        $ref
+     * @param string|class-string|object|Reference|null              $ref
      * @param string[]                                               $required
      * @param Property[]                                             $properties
      * @param int|float                                              $maximum

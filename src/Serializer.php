@@ -59,6 +59,7 @@ class Serializer
         OA\Webhook::class,
         OA\Xml::class,
         OA\XmlContent::class,
+        OA\Reference::class,
     ];
 
     protected static function isValidAnnotationClass(string $className): bool

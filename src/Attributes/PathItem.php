@@ -12,11 +12,11 @@ use OpenApi\Generator;
 class PathItem extends \OpenApi\Annotations\PathItem
 {
     /**
-     * @param string|class-string|object|null $ref
-     * @param Server[]|null                   $servers
-     * @param Parameter[]|null                $parameters
-     * @param array<string,mixed>|null        $x
-     * @param Attachable[]|null               $attachables
+     * @param string|class-string|object|Reference|null $ref
+     * @param Server[]|null                             $servers
+     * @param Parameter[]|null                          $parameters
+     * @param array<string,mixed>|null                  $x
+     * @param Attachable[]|null                         $attachables
      */
     public function __construct(
         ?string $path = null,

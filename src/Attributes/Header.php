@@ -11,9 +11,9 @@ use OpenApi\Generator;
 class Header extends \OpenApi\Annotations\Header
 {
     /**
-     * @param string|class-string|object|null $ref
-     * @param array<string,mixed>|null        $x
-     * @param Attachable[]|null               $attachables
+     * @param string|class-string|object|Reference|null $ref
+     * @param array<string,mixed>|null                  $x
+     * @param Attachable[]|null                         $attachables
      */
     public function __construct(
         string|object|null $ref = null,
